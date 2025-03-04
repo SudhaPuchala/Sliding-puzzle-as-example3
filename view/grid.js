@@ -1,5 +1,5 @@
 
-export function gridView(model,clickedNumber,updateView) {
+export default function gridView(model,clickedNumber,updateView) {
     const grid = document.querySelector('.grid-puzzle');
     grid.innerHTML = `
         <div class="grid">

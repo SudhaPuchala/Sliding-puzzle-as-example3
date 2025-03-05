@@ -1,6 +1,6 @@
 
 export default function gridView(model,clickedNumber,updateView) {
-    const grid = document.querySelector('.grid-puzzle');
+    const grid = document.querySelector('[data-component="grid"]');
     grid.innerHTML = `
         <div class="grid">
             ${model.numbers.map((number, index) => `

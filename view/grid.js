@@ -1,9 +1,11 @@
 
-export default function gridView(model,clickedNumber,updateView) {
-    const grid = document.querySelector('[data-component="grid"]');
-    grid.innerHTML = `
+export default function (targetElement,state) {
+//1.clone
+const newElement = targetElement.cloneNode(true)
+//2: update ut fra state
+newElement.innerHTML = `
         <div class="grid">
-            ${model.numbers.map((number, index) => `
+            ${state.numbers.map((number, index) => `
                 <div class="grid-item" data-index="${index}">
                     ${number === null ? '' : number}
                 </div>
@@ -11,11 +13,13 @@ export default function gridView(model,clickedNumber,updateView) {
         </div>
     `;
 
-   
-    const gridItems = document.querySelectorAll('.grid-item');
-    gridItems.forEach((item, index) => {
-        item.addEventListener('click', () => clickedNumber(index,updateView));
-        
-    });
-
+    return newElement;
 }
+
+    
+    
+
+   
+    
+
+
